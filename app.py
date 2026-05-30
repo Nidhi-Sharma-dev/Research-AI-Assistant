@@ -6,6 +6,9 @@ API key hidden from UI (loaded from Streamlit secrets / .env only)
 import sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 
+# Fix for protobuf + Python 3.14 incompatibility
+os.environ.setdefault("PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION", "python")
+
 import logging
 import streamlit as st
 
